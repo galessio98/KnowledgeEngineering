@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="dinnerDecisions" name="Dinner Decisions" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <decision id="beverages" name="Menu">
+    <informationRequirement id="InformationRequirement_083jsex">
+      <requiredDecision href="#dish" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0s36klr">
+      <requiredInput href="#InputData_1axnom3" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_0sv940s">
+      <requiredAuthority href="#KnowledgeSource_0uuytt6" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_07q05jb" hitPolicy="COLLECT">
+      <input id="InputClause_1acmlkd" label="Ingredients" biodi:width="235" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0bqgrlg" typeRef="string">
+          <text>allowsIngr</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0z2di1b" label="Calorie-conscious">
+        <inputExpression id="LiteralExpression_0zjchz7" typeRef="boolean">
+          <text>countCalories</text>
+        </inputExpression>
+      </input>
+      <output id="OuputClause_99999" label="Dish" name="Dish" typeRef="string" />
+      <rule id="row-506282952-7">
+        <description></description>
+        <inputEntry id="UnaryTests_03g3ci0">
+          <text>contains(allowsIngr, "Meat") and contains(allowsIngr, "Tomato") and contains(allowsIngr, "Flour")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qdigzn">
+          <text>not(true)</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kr45vj">
+          <text>"Pasta al Ragù"</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-506282952-8">
+        <inputEntry id="UnaryTests_1ckv0bb">
+          <text>contains(allowsIngr, "Meat")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a3clcj">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_139n7gl">
+          <text>"Bistecca"</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-506282952-9">
+        <inputEntry id="UnaryTests_05rspiy">
+          <text>contains(allowsIngr, "Tomato") and contains(allowsIngr, "Dairy")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e6nyip">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bzfo47">
+          <text>"Caprese"</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-506282952-10">
+        <inputEntry id="UnaryTests_0mk75lc">
+          <text>contains(allowsIngr, "Diary") and contains(allowsIngr, "Tomato") and contains(allowsIngr, "Flour")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a12xit">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00nwn3e">
+          <text>"Pizza Margherita"</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-506282952-12">
+        <inputEntry id="UnaryTests_0shocr0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hlz2gy">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s2fq8r">
+          <text>"Water"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t1c39t">
+        <inputEntry id="UnaryTests_0366x7t">
+          <text>contains(allowsIngr, "Diary") and contains(allowsIngr, "Meat") and contains(allowsIngr, "Flour")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0af0avg">
+          <text>not(true)</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uurhv5">
+          <text>"Hamburger"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="dish" name="Ingredients">
+    <informationRequirement id="InformationRequirement_0xbr982">
+      <requiredInput href="#InputData_0rin549" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_16ef2zf">
+      <requiredInput href="#InputData_0rk6wen" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_040j91i" biodi:annotationsWidth="400">
+      <input id="InputClause_1esw2zj" label="Vegetarian">
+        <inputExpression id="LiteralExpression_198wj3s" typeRef="boolean">
+          <text>veg</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0bbq1z8" label="Allergies" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1iwaqcz" typeRef="string">
+          <text>allergies</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0rnj0n8">
+          <text></text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_0lfar1z" label="Ingredients" name="allowsIngr" typeRef="string" biodi:width="424" />
+      <rule id="row-884555325-1">
+        <description></description>
+        <inputEntry id="UnaryTests_0xhb62l">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cy7usy">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07xyqqp">
+          <text>["Tomato","Diary","Meat","Flour"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="row-506282952-4">
+        <description></description>
+        <inputEntry id="UnaryTests_0nfccst">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18csep1">
+          <text>matches(allergies, "Lac")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h969t1">
+          <text>["Tomato","Meat","Flour"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_095p120">
+        <inputEntry id="UnaryTests_00cmhdk">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m0540s">
+          <text>matches(allergies, "Glu")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o2p1ud">
+          <text>["Tomato","Diary","Meat"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xgz0zr">
+        <inputEntry id="UnaryTests_00amttl">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e2psdu">
+          <text>contains(allergies, "Lac") and contains(allergies, "Glu")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n5gdnc">
+          <text>["Tomato", "Meat"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ux53dt">
+        <inputEntry id="UnaryTests_07iwr13">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06vf7qn">
+          <text>""</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vj3cmb">
+          <text>["Tomato","Diary","Flour"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sag2ec">
+        <inputEntry id="UnaryTests_0pwlfyf">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mlydpy">
+          <text>matches(allergies, "Lac")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ey3wi9">
+          <text>["Tomato","Flour"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mbri5p">
+        <inputEntry id="UnaryTests_12jedlx">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ux30r4">
+          <text>matches(allergies, "Glu")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pzkm2">
+          <text>["Tomato","Diary"]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qxadr9">
+        <inputEntry id="UnaryTests_0da7qem">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jr4gng">
+          <text>contains(allergies, "Lac") and contains(allergies, "Glu")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_000biu4">
+          <text>["Tomato"]</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_0rin549" name="Preferences" />
+  <inputData id="InputData_1axnom3" name="Calories" />
+  <knowledgeSource id="KnowledgeSource_0uuytt6" name="Chef&#39;s CookBook" />
+  <inputData id="InputData_0rk6wen" name="Allergies" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0i21c0s">
+      <dmndi:DMNShape id="DMNShape_0a1lk6d" dmnElementRef="beverages">
+        <dc:Bounds height="80" width="180" x="340" y="77" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_03cgt9t" dmnElementRef="InformationRequirement_083jsex">
+        <di:waypoint x="273" y="230" />
+        <di:waypoint x="400" y="177" />
+        <di:waypoint x="400" y="157" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0rz3blq" dmnElementRef="dish">
+        <dc:Bounds height="80" width="180" x="183" y="230" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0c10itu" dmnElementRef="InformationRequirement_0xbr982">
+        <di:waypoint x="180" y="389" />
+        <di:waypoint x="243" y="330" />
+        <di:waypoint x="243" y="310" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1uk8cqg" dmnElementRef="InformationRequirement_0s36klr">
+        <di:waypoint x="460" y="247" />
+        <di:waypoint x="460" y="177" />
+        <di:waypoint x="460" y="157" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_00sc46j" dmnElementRef="InputData_0rin549">
+        <dc:Bounds height="45" width="125" x="117" y="389" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_095ntfb" dmnElementRef="InputData_1axnom3">
+        <dc:Bounds height="45" width="125" x="397" y="247" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_12ed5lc" dmnElementRef="KnowledgeSource_0uuytt6">
+        <dc:Bounds height="63" width="100" x="160" y="85" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0bfluya" dmnElementRef="AuthorityRequirement_0sv940s">
+        <di:waypoint x="260" y="118" />
+        <di:waypoint x="340" y="121" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_02eocsa" dmnElementRef="InputData_0rk6wen">
+        <dc:Bounds height="45" width="125" x="318" y="390" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0pmxdjr" dmnElementRef="InformationRequirement_16ef2zf">
+        <di:waypoint x="381" y="390" />
+        <di:waypoint x="303" y="330" />
+        <di:waypoint x="303" y="310" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
