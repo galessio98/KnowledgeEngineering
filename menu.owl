@@ -1,0 +1,805 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/aless/ontologies/2022/5/menu#"
+     xml:base="http://www.semanticweb.org/aless/ontologies/2022/5/menu"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:menu="http://www.semanticweb.org/aless/ontologies/2022/5/menu#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#can_eat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#can_eat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#is_allowed_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#is_allowed_to"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#is_eaten_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#is_eaten_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#contains_calories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#contains_calories">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#has_total_calories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#has_total_calories">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carnivores -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carnivores">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#NonVegetarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#NonVegetarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Preferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegetarian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegetarian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Acqua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Acqua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Bistecca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Bistecca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious_person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious_person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Caprese -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Caprese">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#NonVegetarian"/>
+        <contains_calories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</contains_calories>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carnivores_person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carnivores_person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carnivores"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten"/>
+        <contains_calories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</contains_calories>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance_person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance_person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegetarian"/>
+        <contains_calories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</contains_calories>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata_Mista -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata_Mista">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance_person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance_person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose"/>
+        <contains_calories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</contains_calories>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pasta_al_ragù -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pasta_al_ragù">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Carne_di_vitello"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pizza_Margherita -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pizza_Margherita">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pizza_rossa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pizza_rossa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <composed_of rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegetarian"/>
+        <contains_calories rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</contains_calories>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan_person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan_person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Farina"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Insalata"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Mozzarella"/>
+        <can_eat rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Pomodoro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#i">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#cc">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#gi">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#l">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#li">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#nv">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#v">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/aless/ontologies/2022/5/menu#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not eaten by calories conscious</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Ingredient"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#i"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Calorie_conscious"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#cc"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#i"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#contains_calories"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#i"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#c"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                                <swrl:arguments>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#c"/>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#cc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not eaten by gluten intolerance</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Gluten_intolerance"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#gi"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#g"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#gi"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not eaten by lactose intolerance</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#l"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Lactose_intolerance"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#li"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#l"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#li"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not eaten by vegan</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Dish"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#NonVegetarian"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#nv"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#Vegan"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#v"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#composed_of"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#nv"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#not_eaten_by"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#d"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#v"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#can_eat"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#is_allowed_to"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#y"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/aless/ontologies/2022/5/menu#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
