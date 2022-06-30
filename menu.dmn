@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="dinnerDecisions" name="Dinner Decisions" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="menuDecisions" name="Menu Decisions" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="beverages" name="Menu">
     <informationRequirement id="InformationRequirement_083jsex">
       <requiredDecision href="#dish" />
@@ -47,7 +47,7 @@
       </rule>
       <rule id="row-506282952-9">
         <inputEntry id="UnaryTests_05rspiy">
-          <text>contains(allowsIngr, "Tomato") and contains(allowsIngr, "Dairy")</text>
+          <text>contains(allowsIngr, "Tomato") and contains(allowsIngr, "Diary")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1e6nyip">
           <text>-</text>
@@ -112,7 +112,7 @@
           <text></text>
         </inputValues>
       </input>
-      <output id="OutputClause_0lfar1z" label="Ingredients" name="allowsIngr" typeRef="string" biodi:width="424" />
+      <output id="OutputClause_0lfar1z" label="Ingredients" name="allowsIngr" typeRef="string" biodi:width="252" />
       <rule id="row-884555325-1">
         <description></description>
         <inputEntry id="UnaryTests_0xhb62l">

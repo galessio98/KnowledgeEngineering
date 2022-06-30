@@ -1,0 +1,10 @@
+PREFIX menu: <http://www.semanticweb.org/aless/ontologies/2022/5/menu#>
+SELECT DISTINCT ?d
+	WHERE {?d menu:composed_of ?i.
+		menu:Vegan_person menu:can_eat ?i.
+		FILTER(
+			NOT EXISTS{
+       			?d menu:composed_of ?nv.
+			?nv rdf:type menu:NonVegetarian.
+     		})
+	}
